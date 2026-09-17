@@ -63,10 +63,10 @@
 
 ## 安装
 
-把本仓库的 `wecom-chat-export/` 文件夹放到 WorkBuddy 的技能目录之一：
+把本仓库（**根目录即技能目录**，扁平结构）克隆或复制到 WorkBuddy 的技能目录之一：
 
 - **用户级（所有项目可用）**：`%USERPROFILE%\.workbuddy\skills\wecom-chat-export\`
-- **项目级（团队共享）**：`<项目>\ .workbuddy\skills\wecom-chat-export\`
+- **项目级（团队共享）**：`<项目>\.workbuddy\skills\wecom-chat-export\`
 
 Windows PowerShell 手动安装（含依赖）：
 
@@ -79,6 +79,8 @@ python -m venv .venv
 ```
 
 依赖安装完成后，在 WorkBuddy 中调用 `$wecom-chat-export` 即可。若新技能未显示，重启 WorkBuddy。
+
+> **关于「发布到 WorkBuddy 官方技能市场」**：BuiltinMarket 由 WorkBuddy 官方策展，暂无第三方自助发布入口。本仓库目前通过「克隆到技能目录」的方式分发——任何人 clone 后放到 `~/.workbuddy/skills/` 即可在 WorkBuddy 内直接使用，无需进官方市场。若要进入官方目录，需向 WorkBuddy 团队提交技能审核。
 
 ## 配置（一次性）
 
