@@ -25,10 +25,10 @@ tools (SQLCipher 4). This skill applies only to **WeCom / WXWork 5.x** on Window
 
 ## Key facts (verified on WXWork 5.0.6.6028, 32-bit)
 - **Process**: `WXWork.exe` (32-bit, installed under `C:\Program Files (x86)\WXWork`).
-- **Data dir**: `%USERPROFILE%\Documents\WXWork(account_id)\Data\` — but on this
-  machine "Documents" was relocated by Huawei PC Manager to
-  `D:\HuaweiMoveData\Users\mynam\Documents\WXWork(account_id)\Data\`. Always
-  verify with `tasklist` + a directory listing before assuming the path.
+- **Data dir**: `%USERPROFILE%\Documents\WXWork(账号ID)\Data\` is the standard
+  WeCom location. If your "Documents" folder was relocated (e.g. to another drive)
+  or WeCom is installed in a non-default path, point `wxwork_db_dir` at that `Data`
+  folder. Always verify with `tasklist` + a directory listing before assuming the path.
 - **Encryption**: WeCom's own **wxSQLite3 AES-128-CBC**, one page size 4096.
   - Single global **16-byte** master key shared by ALL `.db` files.
   - No HMAC, no random salt. Fixed salt bytes `b"sAlT"`.
@@ -47,7 +47,7 @@ tools (SQLCipher 4). This skill applies only to **WeCom / WXWork 5.x** on Window
 1. **Confirm environment** (read-only):
    - `tasklist | grep -i wxwork` — must be running and logged in.
    - Locate the account Data folder (contains `message.db`).
-2. **Set up the venv** `C:\Users\mynam\.workbuddy\binaries\python\envs\wecom\`
+2. **Set up the venv** `C:\Users\你的用户名\.workbuddy\binaries\python\envs\wecom\`
    (create with the managed Python 3.13, then `pip install pycryptodome`).
    If a prior install was interrupted, `rm -rf` the broken `Crypto` dir and
    `--force-reinstall pycryptodome` (slow download ~2 min, be patient).

@@ -74,7 +74,7 @@ def _ensure_config():
     if not db_dir or not os.path.isdir(db_dir):
         print(f"✗ config.json 中的 wxwork_db_dir 无效或不存在：{db_dir}")
         print("  请编辑 scripts/config.json，填为本机真实路径，例如：")
-        print(r"    D:\HuaweiMoveData\Users\你的用户名\Documents\WXWork\账号ID\Data")
+        print(r"    C:\Users\你的用户名\Documents\WXWork\账号ID\Data")
         return False
     return True
 

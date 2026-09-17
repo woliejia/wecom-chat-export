@@ -86,14 +86,14 @@ python -m venv .venv
 
 ```json
 {
-  "wxwork_db_dir": "D:/HuaweiMoveData/Users/你的用户名/Documents/WXWork/账号ID/Data",
+  "wxwork_db_dir": "C:/Users/你的用户名/Documents/WXWork/账号ID/Data",
   "wxwork_keys_file": "wxwork_keys.json",
   "wxwork_decrypted_dir": "wxwork_decrypted",
   "wxwork_export_dir": "wxwork_export"
 }
 ```
 
-> **重要**：本机「文档」若被华为电脑管家等工具迁到 D 盘，自动探测会失败，必须手动指定
+> **重要**：若自动探测失败（例如「文档」目录被迁移到其他盘、或企业微信装在非默认位置），必须手动指定
 > `wxwork_db_dir` 到包含 `message.db` 的 `Data` 文件夹。`self_id` 会从该路径最后一段
 > 16 位数字自动推断。`config.example.json` 为模板，可直接复制改名使用。
 

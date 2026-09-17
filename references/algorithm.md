@@ -27,13 +27,13 @@
 ## Ready config.json (this machine)
 ```json
 {
-  "wxwork_db_dir": "D:/HuaweiMoveData/Users/mynam/Documents/WXWork/1688857135749073/Data",
+  "wxwork_db_dir": "C:/Users/你的用户名/Documents/WXWork/账号ID/Data",
   "wxwork_keys_file": "wxwork_keys.json",
-  "wxwork_decrypted_dir": "D:/workbuddy/weixin/wecom-decrypt/wxwork_decrypted",
-  "wxwork_export_dir": "D:/workbuddy/weixin/wecom-decrypt/wxwork_export"
+  "wxwork_decrypted_dir": "wxwork_decrypted",
+  "wxwork_export_dir": "wxwork_export"
 }
 ```
-- `self_id` inferred from `wxwork_db_dir` last path segment `1688857135749073`.
+- `self_id` inferred from the `wxwork_db_dir` last path segment (the 16-digit account id, e.g. `账号ID`).
 - The global master key (example, do not hardcode in skill): a single 32-hex
   string reused for all 17 DBs. Re-run `find_wxwork_keys.py` each session because
   the in-memory key changes after WXWork restart.
