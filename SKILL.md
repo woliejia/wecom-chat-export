@@ -1,13 +1,14 @@
 ---
 name: wecom-chat-export
+display_name: 企业微信聊天记录导出与解密
+display_name_en: WeCom Chat Export & Decryption
 description: |
-  This skill should be used when a user wants to read, decrypt, export, or
-  summarize local WeCom (企业微信 / WXWork) chat history from their own PC.
-  Covers locating the WeCom data directory, extracting the global master key
-  from the WXWork.exe process memory (no admin needed), decrypting the
-  wxSQLite3 AES-128-CBC databases, and exporting conversations to
-  JSON/HTML/CSV for analysis. Trigger phrases include "导出企业微信聊天记录",
-  "企业微信数据库解密", "读取 WXWork 记录", "分析企业微信聊天".
+  本技能用于读取、解密、导出并分析用户自己电脑上企业微信（WeCom/WXWork）的本地聊天数据库。覆盖定位数据目录、从 WXWork.exe 进程内存提取全局主密钥（无需管理员）、解密 wxSQLite3 AES-128-CBC 数据库、并导出为 JSON/HTML/CSV 供分析。触发词示例："导出企业微信聊天记录"、"企业微信数据库解密"、"读取 WXWork 记录"、"分析企业微信聊天"。
+description_zh: 读取并解密你自己电脑上的企业微信（WeCom/WXWork）本地聊天数据库，导出为 JSON/HTML/CSV 供分析；全程仅访问本机数据，不上传云端。
+description_en: Decrypt and export your own local WeCom (WXWork) chat databases on Windows, then analyze them as JSON/HTML/CSV. Runs fully offline on your PC.
+category: productivity
+version: 1.0.0
+author: woliejia
 agent_created: true
 ---
 
@@ -61,7 +62,7 @@ tools (SQLCipher 4). This skill applies only to **WeCom / WXWork 5.x** on Window
    one command (it copies `config.example.json` → `config.json` if missing).
 4. **config.json**: Copy `scripts/config.example.json` to `scripts/config.json`
    and set `wxwork_db_dir` explicitly to the `Data` folder (auto-detect only checks
-   `%USERPROFILE%\Documents\WXWork`, which fails after the Huawei relocation).
+   `%USERPROFILE%\Documents\WXWork`, which fails if "Documents" was relocated).
    Also set `wxwork_decrypted_dir` and `wxwork_export_dir`. See
    `references/algorithm.md` for a ready config example.
 5. **Extract key**: `python find_wxwork_keys.py` → writes `wxwork_keys.json`.
